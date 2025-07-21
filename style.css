@@ -1,44 +1,95 @@
+/* style.css */
 body {
-  font-family: sans-serif;
   margin: 0;
-  padding: 0;
-  background: #fdfdfd;
-  color: #222;
+  font-family: "Helvetica Neue", sans-serif;
+  background: #fafafa;
+  color: #333;
 }
 
-header, footer {
-  text-align: center;
-  padding: 2rem;
-  background: #f4f4f4;
-}
-
-nav {
+header {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-input {
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #027aff;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+}
+
+.hero input {
   width: 60%;
-  padding: 1rem;
-  margin-top: 1rem;
-  font-size: 1rem;
+  max-width: 500px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  margin-top: 20px;
+}
+
+.collections {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.collections h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
 }
 
 .grid {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
   justify-content: center;
-  padding: 1rem;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .card {
   background: #fff;
-  padding: 1rem;
-  border-radius: 8px;
-  width: 180px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  border-radius: 16px;
+  padding: 20px;
+  width: 160px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+footer {
   text-align: center;
+  padding: 30px;
+  background: #222;
+  color: #fff;
+  margin-top: 60px;
 }
