@@ -1,0 +1,67 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+    <nav class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between">
+            <!-- Logo -->
+            <a href="/" class="flex items-center">
+                <span class="text-2xl font-bold">
+                    <span style="color: #D97757;">Braces</span><span
+                        class="text-black">Colors</span
+                    >
+                </span>
+            </a>
+
+            <!-- Navigation -->
+            <div class="hidden md:flex items-center">
+                <a
+                    href="/"
+                    class={`font-medium transition-colors px-4 py-2 ${currentPath === "/" ? "text-primary" : "text-secondary hover:text-primary"}`}
+                >
+                    Home
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button
+                id="mobile-menu-button"
+                class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+                aria-label="Toggle menu"
+            >
+                <svg
+                    class="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t pt-4">
+            <a
+                href="/"
+                class={`block py-3 px-4 font-medium transition-colors ${currentPath === "/" ? "text-primary" : "text-secondary hover:text-primary"}`}
+            >
+                Home
+            </a>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const mobileMenuButton = document.getElementById("mobile-menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    mobileMenuButton?.addEventListener("click", () => {
+        mobileMenu?.classList.toggle("hidden");
+    });
+</script>
